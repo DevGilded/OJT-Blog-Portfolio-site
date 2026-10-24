@@ -1,243 +1,276 @@
-import type { WeeklyLog } from '../types/content';
+import type { WeeklyLog } from "../types/content";
 
 export const weeklyLogs: WeeklyLog[] = [
-{
-  week: 1,
-  slug: 'week-1-orientation-and-setup',
-  title: 'Orientation, IDs, and my first git clone',
-  dateRange: 'Jun 15 – Jun 19, 2026',
-  startDate: '2026-06-15',
-  minutes: 2180,
-  readTime: '4 min read',
-  summary:
-  'Company orientation, setting up my dev environment, and cloning the ICQ repository for the first time.',
-  highlights: ['Onboarding', 'Dev setup'],
-  tags: ['Git', 'Documentation'],
-  thumbnailUrl: "/3df24922-c856-4677-b39b-879f90a9dc48.jpg",
-
-  thumbnailAlt: 'Intern holding a new company ID during orientation',
-  body: [
-  'Day one was paperwork, a building tour, and a very nervous photo for my company ID. By the afternoon I had a laptop, a Jira account, and read access to the ICQ repository — the internal client questionnaire system I would spend most of the summer inside.',
-  'Setting up the local environment took longer than I expected. The project runs on an older Laravel version, and my PHP version was too new. I ended up using a version manager instead of reinstalling everything, and wrote down every step immediately.',
-  'By Friday I could run the app locally, log in as a test user, and submit a questionnaire end to end. Small win, but it felt big.'],
-
-  tasks: [
-  'Completed HR orientation and security briefing',
-  'Installed PHP, Composer, Node, and SQLite locally',
-  'Cloned the ICQ repository and ran the app end to end',
-  'Read the team’s Git branching guide'],
-
-  reflection: 'Write down setup steps the first time. Someone else will need them.'
-},
-{
-  week: 2,
-  slug: 'week-2-reading-the-codebase',
-  title: 'Learning to read code I didn’t write',
-  dateRange: 'Jun 22 – Jun 26, 2026',
-  startDate: '2026-06-22',
-  minutes: 2265,
-  readTime: '5 min read',
-  summary:
-  'Mapped the ICQ module’s routes, controllers, and Vue components into my own notes before touching anything.',
-  highlights: ['Code reading', 'Laravel routes'],
-  tags: ['Laravel', 'Documentation'],
-  thumbnailUrl: "/4d388260-12cd-44a4-8c84-bbbb8bfcfd26.jpg",
-
-  thumbnailAlt: 'Laptop with code editor open beside a notebook and coffee',
-  body: [
-  'I gave myself one rule this week: don’t change anything yet, just understand it. So I spent five days tracing how a single questionnaire moves from the Vue form, through the Laravel controller, into the SQLite database, and back out as a PDF report.',
-  'I drew the whole flow in my notebook. It was messy, but by Thursday I could answer questions about the module without opening the code — which surprised me.'],
-
-  tasks: [
-  'Traced the ICQ submission flow from form to database',
-  'Documented 14 routes and their controllers',
-  'Listed questions for Friday’s check-in'],
-
-  reflection: 'Reading code is a skill. Nobody teaches it in class, and it’s most of the job.'
-},
-{
-  week: 3,
-  slug: 'week-3-first-laravel-fix',
-  title: 'My first real ticket: a Laravel bug fix',
-  dateRange: 'Jun 29 – Jul 3, 2026',
-  startDate: '2026-06-29',
-  minutes: 2290,
-  readTime: '5 min read',
-  summary:
-  'Fixed a date-formatting bug in the ICQ report export and opened my first pull request on the team repo.',
-  highlights: ['First PR', 'Pair programming'],
-  tags: ['Laravel', 'Git'],
-  thumbnailUrl: "/fe1985e2-e23e-4e76-8fc1-6a03716ee463.jpg",
-
-  thumbnailAlt: 'Senior developer and intern pair programming at one monitor',
-  body: [
-  'My first ticket: exported reports were showing dates in UTC instead of Philippine time. The fix itself was three lines in a Laravel accessor. Finding where to put those three lines took a day and a half.',
-  'I learned to use `git blame` and the test suite to understand why code looks the way it does before changing it. My PR got four review comments. I fixed all four and it merged on Friday.'],
-
-  tasks: [
-  'Fixed timezone formatting in the ICQ report export',
-  'Wrote a feature test covering the fix',
-  'Opened and merged my first pull request'],
-
-  reflection: 'Review comments aren’t criticism. They’re free lessons.'
-},
-{
-  week: 4,
-  slug: 'week-4-first-deploy',
-  title: 'First deploy to production',
-  dateRange: 'Jul 6 – Jul 10, 2026',
-  startDate: '2026-07-06',
-  minutes: 2250,
-  readTime: '4 min read',
-  summary:
-  'Shipped two small fixes to production during the team’s Thursday release and watched real users hit my code.',
-  highlights: ['Release', 'Code review'],
-  milestone: 'First deploy',
-  tags: ['Laravel', 'Git'],
-  thumbnailUrl: "/bfff54dd-aeef-4fa7-a468-fac08df84e54.jpg",
-
-  thumbnailAlt: 'Hands typing on a laptop with Git commit history on screen',
-  body: [
-  'Thursday is release day. This week, two of the commits going out were mine — the timezone fix from last week and a small validation message correction.',
-  'I watched the deploy run and kept an eye on the logs. Nothing broke. Afterwards, a staff member from the accounting department messaged the team chat to say the report dates finally looked right. I screenshotted it.'],
-
-  tasks: [
-  'Prepared release notes for my two changes',
-  'Observed the production deployment process',
-  'Monitored error logs after release'],
-
-  reflection: 'Somebody actually uses this. That changes how carefully you test.'
-},
-{
-  week: 5,
-  slug: 'week-5-rebuilding-the-icq-form',
-  title: 'Rebuilding the ICQ form in Vue.js',
-  dateRange: 'Jul 13 – Jul 17, 2026',
-  startDate: '2026-07-13',
-  minutes: 2215,
-  readTime: '6 min read',
-  summary:
-  'Started converting the old jQuery-based questionnaire form into reusable Vue.js components from the new Figma mockups.',
-  highlights: ['Vue components', 'Figma handoff'],
-  tags: ['Vue.js', 'Figma'],
-  thumbnailUrl: "/6269a85b-642c-4184-9784-61ef4a7ab895.jpg",
-
-  thumbnailAlt: 'Intern designing a form wireframe in Figma on a laptop',
-  body: [
-  'The ICQ form was the oldest part of the system — one huge jQuery file. My task was to rebuild it as Vue.js components based on the Figma mockups.',
-  'I moved fast this week. Too fast, honestly. I leaned on an AI assistant for most of the validation logic and pasted in what it suggested. It worked in the browser, so I moved on. That decision comes back next week.'],
-
-  tasks: [
-  'Split the ICQ form into 6 Vue components',
-  'Matched spacing and states to the Figma mockups',
-  'Wired form submission to the existing Laravel endpoint'],
-
-  reflection: '“It works” and “I understand why it works” are two different things.'
-},
-{
-  week: 6,
-  slug: 'week-6-refactoring-validation-by-hand',
-  title: 'Refactoring the form validation — by hand',
-  dateRange: 'Jul 20 – Jul 24, 2026',
-  startDate: '2026-07-20',
-  minutes: 2282,
-  readTime: '6 min read',
-  summary:
-  'Couldn’t explain my own validation code in review, so I rewrote it manually, rule by rule, until I could.',
-  highlights: ['Refactor', 'Ownership'],
-  tags: ['Vue.js', 'Laravel'],
-  thumbnailUrl: "/c3967119-c5c6-4e47-a781-337912c49b2d.jpg",
-
-  thumbnailAlt: 'Intern sketching a schema diagram on an office whiteboard',
-  body: [
-  'In Monday’s review, I was asked to walk through a validation function I had written. I couldn’t. I had accepted it without really reading it.',
-  'If I couldn’t explain it, it wasn’t really mine yet. So I spent the week manually refactoring the ICQ form validation — mapping every rule on the whiteboard, matching it against the Laravel request rules on the backend, and rewriting the Vue side so both sides agreed.',
-  'It took two extra days. The new version is shorter, has tests, and I can explain every line.'],
-
-  tasks: [
-  'Mapped all 23 validation rules front and back',
-  'Rewrote Vue validation to mirror Laravel form requests',
-  'Added unit tests for edge cases'],
-
-  reflection: 'AI is a colleague whose work I have to review, not an answer key.'
-},
-{
-  week: 7,
-  slug: 'week-7-supervisor-review',
-  title: 'Mid-term review and the Figma revisions',
-  dateRange: 'Jul 27 – Jul 31, 2026',
-  startDate: '2026-07-27',
-  minutes: 2260,
-  readTime: '5 min read',
-  summary:
-  'Presented the rebuilt ICQ form to the team, got my supervisor evaluation, and iterated on the Figma feedback.',
-  highlights: ['Demo', 'Evaluation'],
-  milestone: 'Supervisor review',
-  tags: ['Figma', 'Vue.js'],
-  thumbnailUrl: "/dbef5f3d-a5a5-436a-a7fb-84d91d07b824.jpg",
-
-  thumbnailAlt: 'Intern presenting a web app on a TV screen to supervisors',
-  body: [
-  'I demoed the new ICQ form to my supervisor and two staff members who use it daily. They liked the cleaner layout but found the progress indicator confusing, so I went back into Figma and simplified it.',
-  'My supervisor’s evaluation named “strong technical skill & initiative” as my strength — and “improve punctuality & documentation” as what to work on. Both were fair, and the second one shaped how I spent the rest of the OJT.'],
-
-  tasks: [
-  'Demoed the rebuilt form to the team and end users',
-  'Revised the progress indicator in Figma',
-  'Implemented the updated design in Vue'],
-
-  reflection: 'Show unfinished work to real users sooner. They see things you can’t.'
-},
-{
-  week: 8,
-  slug: 'week-8-documentation-and-handover',
-  title: 'Writing the docs I wished I had',
-  dateRange: 'Aug 3 – Aug 7, 2026',
-  startDate: '2026-08-03',
-  minutes: 2208,
-  readTime: '4 min read',
-  summary:
-  'Wrote setup and component documentation for the ICQ module so the next intern doesn’t start from zero.',
-  highlights: ['README', 'Handover'],
-  tags: ['Documentation', 'Git'],
-  thumbnailUrl: "/4d388260-12cd-44a4-8c84-bbbb8bfcfd26.jpg",
-
-  thumbnailAlt: 'Laptop and notebook on a desk in warm daylight',
-  body: [
-  'Remember the setup notes from week one? This week they became the project’s new README. I added a section on the version manager, a diagram of the submission flow from week two, and docs for each Vue component I built.',
-  'After the feedback on documentation, I wanted this one done properly. I added one line at the top: “Start here.” That might be my favorite commit of the whole OJT.'],
-
-  tasks: [
-  'Rewrote the ICQ README with setup steps',
-  'Documented props and events for 6 Vue components',
-  'Cleaned up and closed my remaining branches'],
-
-  reflection: 'Documentation is a gift to a stranger — often your future self.'
-},
-{
-  week: 9,
-  slug: 'week-9-certificate-and-goodbyes',
-  title: 'The last week, the certificate, and goodbyes',
-  dateRange: 'Aug 10 – Aug 14, 2026',
-  startDate: '2026-08-10',
-  minutes: 2088,
-  readTime: '5 min read',
-  summary:
-  'Final fixes, an exit evaluation, my Certificate of Completion — and 333h 58m rendered against a 324-hour target.',
-  highlights: ['Exit evaluation', 'Certificate'],
-  milestone: 'Certificate of completion',
-  tags: ['Documentation'],
-  thumbnailUrl: "/cd5bdf74-6088-4422-a1ef-8c20c4fffb40.jpg",
-
-  thumbnailAlt: 'The development team posing for a group photo with the intern',
-  body: [
-  'The final week was quiet on purpose. I fixed two small bugs reported after the form launch, sat for my exit evaluation, and handed over my laptop on Friday afternoon.',
-  'We had merienda and took a group photo at the ICT Building. My supervisor, Anthony B. Yanto, EDPS, handed me my Certificate of Completion — 333 hours and 58 minutes against the 324 required. I called my mom from the parking lot.'],
-
-  tasks: [
-  'Fixed two post-launch bugs in the ICQ form',
-  'Completed the exit evaluation with my supervisor',
-  'Returned equipment and revoked my access'],
-
-  reflection: 'Say thank you specifically. People remember what you noticed.'
-}];
+  {
+    week: 1,
+    slug: "week-1-orientation-and-setup",
+    title: "Orientation, Environment Setup, and iAudit Introduction",
+    dateRange: "Jul 13 – Jul 17, 2026",
+    startDate: "2026-07-13",
+    minutes: 2400,
+    readTime: "4 min read",
+    summary:
+      "Began the OJT at the university ICT department. Focused on orientation, setting up the local development environment, and getting introduced to the iAudit project scope.",
+    highlights: [
+      "OJT Orientation",
+      "Dev Environment Setup",
+      "Project Briefing",
+    ],
+    tags: ["Onboarding", "Laravel", "Vue 3", "Setup"],
+    thumbnailUrl: "/thumbnails/week-1.jpg",
+    thumbnailAlt:
+      "Initial setup of a dual-monitor coding environment running Arch Linux",
+    body: [
+      "The first week was all about getting integrated into the ICT department. We had our orientation with Ma'am Cara and Sir Tuga, who laid out the expectations and requirements for our OJT hours.",
+      "I spent a significant portion of the week setting up my local development environment. Because I use Arch Linux, getting the exact stack configured with Docker and ensuring compatibility for Laravel, Vue 3, and Inertia.js took some tinkering.",
+      "We were officially introduced to the iAudit system—an internal control questionnaire and auditing management tool. My teammates (Seth, Joemar, and Aljon) and I divided the initial research and discussed how to structure the database.",
+    ],
+    tasks: [
+      "Completed ICT department onboarding and OJT orientation",
+      "Configured local Linux development environment for Laravel and Vue 3",
+      "Reviewed the project scope and requirements for the iAudit system",
+      "Held initial planning meetings with teammates Seth, Joemar, and Aljon",
+    ],
+    reflection:
+      "Setting up the environment properly from day one saves hours of headaches later. It’s exciting to finally start working on a real-world system for the university.",
+  },
+  {
+    week: 2,
+    slug: "week-2-initial-prototyping-and-middleware",
+    title: "Diving into Code: Prototyping and Role-Based Middleware",
+    dateRange: "Jul 20 – Jul 24, 2026",
+    startDate: "2026-07-20",
+    minutes: 2400,
+    readTime: "4 min read",
+    summary:
+      "Started writing the actual application code, focusing on the initial prototype, establishing role-based middleware, and separating the admin and user portals.",
+    highlights: ["Prototyping", "Role-Based Middleware", "Portal Separation"],
+    tags: ["Development", "Inertia.js", "Middleware", "Authentication"],
+    thumbnailUrl: "/thumbnails/week-2.jpg",
+    thumbnailAlt:
+      "Code snippet demonstrating role-based middleware routing in Laravel",
+    body: [
+      "This week, development officially began. We hit the ground running by generating the foundational Laravel routes and setting up Inertia.js to connect our backend with the Vue 3 frontend.",
+      "My primary task was establishing the role-based middleware. iAudit requires strict access control, so I had to ensure that internal auditors, unit heads, and standard users had completely separate portals and permissions.",
+      "We relied quite a bit on AI tools during this phase to quickly scaffold the boilerplate code and get a working prototype up and running. It felt fast, but I started noticing some structural complexities.",
+    ],
+    tasks: [
+      "Scaffolded the base Laravel and Vue 3/Inertia application",
+      "Implemented role-based middleware for access control",
+      "Created distinct routing for the Admin and User portals",
+      "Utilized AI tools for rapid code scaffolding and prototyping",
+    ],
+    reflection:
+      "Using AI to generate boilerplate is incredibly fast, but I need to make sure I actually understand the underlying architecture it creates.",
+  },
+  {
+    week: 3,
+    slug: "week-3-core-features-and-form-foundations",
+    title: "Building Out Core Features and Form Foundations",
+    dateRange: "Jul 27 – Jul 31, 2026",
+    startDate: "2026-07-27",
+    minutes: 2400,
+    readTime: "5 min read",
+    summary:
+      "Expanded the application's core administrative features, designed the preliminary database schemas for the forms, and prepared for the first system demonstration.",
+    highlights: ["Core Features", "Database Schema", "Demo Preparation"],
+    tags: ["Backend", "Database", "CRUD", "UI/UX"],
+    thumbnailUrl: "/thumbnails/week-3.jpg",
+    thumbnailAlt: "A wireframe of the internal control questionnaire layout",
+    body: [
+      "Week 3 was heavily focused on the core administrative and user-side features. We needed to show tangible progress, so I started building out the basic UI elements for the organization and campus management modules.",
+      "The hardest part was visualizing how the multi-stage ICQ forms would actually map to the database. I drafted the preliminary schemas for how questions, categories, and answers would be stored.",
+      "By Friday, we were rushing to stitch the frontend UI components together with our backend logic to prepare for our first major demonstration with the Internal Audit department scheduled for the following week.",
+    ],
+    tasks: [
+      "Developed initial administrative UI components",
+      "Drafted preliminary database schemas for the ICQ forms",
+      "Integrated frontend form components with backend controllers",
+      "Prepared the staging environment for the upcoming stakeholder demo",
+    ],
+    reflection:
+      "Building features quickly is good, but doing it under a time crunch is starting to reveal cracks in the AI-generated code structure. A refactor might be necessary soon.",
+  },
+  {
+    week: 4,
+    slug: "week-4-frontend-ui-and-first-demo",
+    title: "Dynamic UI, AI Assistance, and the First Internal Audit Demo",
+    dateRange: "Aug 3 – Aug 7, 2026",
+    startDate: "2026-08-03",
+    minutes: 2400,
+    readTime: "5 min read",
+    summary:
+      "Built dynamic frontend navigation and a carousel-style ICQ form UI. Used AI tools to meet a strict deadline for the first Internal Audit presentation, resulting in a thesis recommendation.",
+    highlights: [
+      "Dynamic Breadcrumbs",
+      "ICQ Carousel UI",
+      "Internal Audit Demo",
+    ],
+    tags: ["Vue 3", "Frontend", "UI/UX", "AI Tools"],
+    milestone: "Presented the initial build to the Internal Audit department.",
+    thumbnailUrl: "/thumbnails/week-4.jpg",
+    thumbnailAlt: "A modern web navigation app bar with dynamic breadcrumbs",
+    body: [
+      "This week was all about pushing the frontend. I built a modern navigation app bar with dynamic breadcrumbs so users always know where they are (e.g., Overview > Settings > Profile). I also designed a multi-stage carousel interface for the ICQ forms to make answering assessments more intuitive.",
+      "As the Friday deadline approached, I had to rely heavily on AI to rapidly build out the admin portal. I implemented role-based middleware, a dashboard with status cards, and the ICQ management tables just in time.",
+      "During the 2-hour presentation to Ma'am Cara and the Internal Audit team, there was a lot of back-and-forth feedback. Because of the system's complexity and potential, they officially suggested turning iAudit into my academic thesis, which was a huge win.",
+    ],
+    tasks: [
+      "Designed dynamic breadcrumb routing for the user portal",
+      "Engineered a multi-stage carousel card UI for ICQ assessments",
+      "Used AI to rapidly prototype the admin dashboard and form management CRUD",
+      "Presented the functional build to the Internal Audit department",
+    ],
+    reflection:
+      "Relying on AI crunch time gets the job done for strict deadlines, but it introduces technical debt. However, delivering a working prototype opened the door for this project to become my actual thesis.",
+  },
+  {
+    week: 5,
+    slug: "week-5-code-refactoring-and-database",
+    title: "Code Refactoring, Generalization, and Scope Creep",
+    dateRange: "Aug 10 – Aug 14, 2026",
+    startDate: "2026-08-10",
+    minutes: 1920,
+    readTime: "4 min read",
+    summary:
+      "Dedicated to cleaning up the frontend codebase, unifying the navigation bar, and transitioning to backend Laravel database configurations before falling sick.",
+    highlights: ["Codebase Clean-up", "Unified Appbar", "Laravel Artisan"],
+    tags: ["Refactoring", "Laravel", "Database"],
+    thumbnailUrl: "/thumbnails/week-5.jpg",
+    thumbnailAlt:
+      "A code editor showing generalized Vue components and a unified app bar",
+    body: [
+      "After the rush of last week, I needed to clean up the code. I spent the first few days refactoring the frontend architecture to make components more reusable. I combined the user and admin navigation bars into a single, role-based component.",
+      "Mid-week, I transitioned to backend database configuration, learning how to use php artisan to manage schema modifications. However, I got hit hard by scope creep while trying to implement a custom user login system, which distracted me from the core forms.",
+      "By Friday, I caught a bad cold and had to take a sick leave, missing the day completely and pushing my critical database tasks to the following week.",
+    ],
+    tasks: [
+      "Refactored the frontend architecture for reusability",
+      "Created a unified, role-based navigation appbar",
+      "Configured database schemas using php artisan",
+      "Navigated and documented project scope creep regarding authentication",
+    ],
+    reflection:
+      "Scope creep is dangerous. I need to focus strictly on foundational requirements before adding nice-to-have features like custom authentication.",
+  },
+  {
+    week: 6,
+    slug: "week-6-system-revamp",
+    title: "The Great Revamp: Reducing AI Reliance",
+    dateRange: "Aug 17 – Aug 21, 2026",
+    startDate: "2026-08-17",
+    minutes: 2400,
+    readTime: "5 min read",
+    summary:
+      "Executed a complete manual migration and architectural revamp of the system to reduce reliance on AI-generated code and improve personal comprehension.",
+    highlights: ["Project Revamp", "Manual Code Migration", "Organization UI"],
+    tags: ["Architecture", "Refactoring", "System Design"],
+    milestone:
+      "Successfully completed the system structural revamp without AI crutches.",
+    thumbnailUrl: "/thumbnails/week-6.jpg",
+    thumbnailAlt:
+      "Flowchart showing database schemas for organization, user, and forms",
+    body: [
+      "I realized that relying too much on AI-generated code last week made the system difficult for me to understand and maintain. I made the tough decision to create a completely new project folder and slowly migrate the code over manually.",
+      "This took the entire week. While it felt like I wasn't adding new features, I was fundamentally restructuring the project architecture, cleaning up the backend, and mapping out the vital form, organization, and user schemas.",
+      "By Friday, the revamp was mostly finished. The miscellaneous pages were working perfectly, allowing admins to dynamically create campuses, assign multiple units, and map user roles accurately.",
+    ],
+    tasks: [
+      "Created a new repository to migrate codebase manually",
+      "Designed and mapped the Form, Organization, and User table schemas",
+      "Rebuilt the UI/UX for the administrative miscellaneous pages",
+      "Implemented dynamic campus and unit assignments",
+    ],
+    reflection:
+      "Rebuilding from scratch without AI crutches is painful and slow, but it is absolutely necessary for long-term maintainability and deep technical understanding.",
+  },
+  {
+    week: 7,
+    slug: "week-7-form-crud-and-rescheduling",
+    title: "Laravel CRUD Battles and Managing Expectations",
+    dateRange: "Aug 24 – Aug 29, 2026",
+    startDate: "2026-08-24",
+    minutes: 1920,
+    readTime: "4 min read",
+    summary:
+      "Focused entirely on backend Laravel CRUD operations for the form module. Encountered major bugs leading to a presentation reschedule and a cancelled overtime shift.",
+    highlights: ["Form CRUD", "Backend Debugging", "Stakeholder Communication"],
+    tags: ["Laravel", "CRUD", "Backend", "Debugging"],
+    thumbnailUrl: "/thumbnails/week-7.jpg",
+    thumbnailAlt: "A Laravel backend code snippet showing form creation logic",
+    body: [
+      "The focus this week was strictly on the Form CRUD (Create, Read, Update, Delete) operations. I started the week working remotely due to a lingering illness, pushing through Laravel backend documentation to get the logic working.",
+      "The UI was looking great, but the backend integration was a mess of bugs. With another presentation scheduled for Thursday, I had to make the difficult call to ask Ma'am Cara to postpone the demo with Internal Audit to next week.",
+      "I planned to do a Saturday overtime shift to catch up, but a facility blackout forced me to cancel. Sometimes things just don't go as planned.",
+    ],
+    tasks: [
+      "Initiated core Form CRUD operations in Laravel",
+      "Finalized visual design for form creation UI components",
+      "Debugged persistent backend data integration issues",
+      "Coordinated with supervisors to reschedule the stakeholder presentation",
+    ],
+    reflection:
+      "It is better to be transparent about technical blockers and ask for an extension than to present a broken system to stakeholders.",
+  },
+  {
+    week: 8,
+    slug: "week-8-cross-campus-testing-demo",
+    title: "Cross-Campus Testing Prep and the Thesis Transition",
+    dateRange: "Aug 31 – Sep 4, 2026",
+    startDate: "2026-08-31",
+    minutes: 2400,
+    readTime: "6 min read",
+    summary:
+      "Finalized the Internal Audit form interfaces, successfully presented the system, solidified the transition to an academic thesis, and completed the unit head portal.",
+    highlights: ["Successful Demo", "Thesis Transition", "Unit Head Portal"],
+    tags: ["Presentation", "Milestone", "Full Stack"],
+    milestone:
+      "Approved to transition iAudit into an academic thesis with a target date for cross-campus testing.",
+    thumbnailUrl: "/thumbnails/week-8.jpg",
+    thumbnailAlt:
+      "A successful presentation slide showing the iAudit system architecture",
+    body: [
+      "Monday was the big day. We presented the current state of the system to Internal Audit. We transparently explained the development delays and the reason for the codebase revamp. They were highly receptive and agreed to our proposal to officially transition the project into our academic thesis.",
+      "We left that meeting with a solid milestone: a fully functional, cross-campus testable build by the 25th of the month. ",
+      "With renewed energy, I tackled the Form module. Having rebuilt the foundation in Week 6, I finally understood the data flow perfectly. By Friday, I had completed both the internal auditor interface and the unit head portal, allowing end-users to actually answer and submit assigned forms.",
+    ],
+    tasks: [
+      "Presented refactored system architecture to Internal Audit stakeholders",
+      "Transitioned the OJT project into an official academic thesis",
+      "Finalized backend functionality for Internal Audit form creation",
+      "Developed the Unit Head portal for answering and submitting assessments",
+    ],
+    reflection:
+      "Clear communication about technical debt builds stakeholder trust. Securing this system as my thesis gives all the late nights and refactoring a long-term purpose.",
+  },
+  {
+    week: 9,
+    slug: "week-9-final-hours-and-graduation",
+    title: "UI Polish, Extra Hours, and the Finish Line",
+    dateRange: "Sep 7 – Sep 11, 2026",
+    startDate: "2026-09-07",
+    minutes: 2400,
+    readTime: "3 min read",
+    summary:
+      "Refined UI/UX designs as OJT hours concluded, volunteered extra time to ensure system stability, and attended the ICT-sponsored practicum completion party.",
+    highlights: ["UI/UX Polish", "Hours Completed", "Graduation Party"],
+    tags: ["UI/UX", "Completion", "Culture"],
+    milestone: "Officially completed mandatory OJT practicum hours.",
+    thumbnailUrl: "/thumbnails/week-9.jpg",
+    thumbnailAlt:
+      "A group of student interns celebrating completion at a graduation party",
+    body: [
+      "This week was all about crossing the finish line. With my mandatory OJT hours nearly complete, I spent my time refining the UI/UX of the form creation module to make sure the final deliverable was as polished as possible.",
+      "By Thursday, I officially hit my required hour mark. However, to ensure the system was stable for the upcoming cross-campus testing, I stayed the full day voluntarily.",
+      "Friday was a celebration. The ICT department threw a graduation party for all the completing interns. We coordinated logistics, brought food, and celebrated the end of a grueling but incredibly rewarding practicum.",
+    ],
+    tasks: [
+      "Polished UI/UX for the form creation and submission modules",
+      "Maintained system stability ahead of upcoming cross-campus testing",
+      "Volunteered an additional full-day shift beyond required hours",
+      "Organized and attended the ICT intern graduation celebration",
+    ],
+    reflection:
+      "Wrapping up a major project requires just as much dedication as starting one. Seeing the system stabilize as my required hours ended was the perfect conclusion.",
+  },
+];

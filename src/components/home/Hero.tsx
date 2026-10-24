@@ -72,7 +72,7 @@ export function Hero() {
           initial={{ opacity: 0, scale: 0.97 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.1, ease: "easeOut" }}
-          className="relative mx-auto mt-20 w-full max-w-md h-[450px] bg-accent-gold-light rounded-2xl"
+          className="relative mx-auto mt-20 w-full max-w-md h-[320px] xs:h-[400px] sm:h-[450px] bg-accent-gold-light rounded-2xl"
         >
           <div className="absolute -top-[140px] left-[36px]">
             <img
@@ -81,7 +81,7 @@ export function Hero() {
               className="h-full w-full object-cover"
             />
           </div>
-          <div className="absolute -bottom-14 left-4 right-4 flex items-center gap-4 rounded-[20px] border border-accent-gold-light bg-surface p-4 shadow-md sm:left-auto sm:right-[-1.5rem] sm:w-72 mr-20">
+          <div className="absolute -bottom-14 left-14 right-4 flex items-center gap-4 rounded-[20px] border border-accent-gold-light bg-surface p-4 shadow-md sm:left-auto sm:right-[-1.5rem] sm:w-72 mr-10 xs:mr-18 sm:mr-20">
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent-gold-tint text-accent-gold-dark">
               <AwardIcon className="h-5 w-5" aria-hidden="true" />
             </span>

@@ -15,6 +15,7 @@ export type WeeklyLog = {
   body: string[];
   tasks: string[];
   reflection: string;
+  photos?: Photo[];
 };
 
 export type Photo = {
