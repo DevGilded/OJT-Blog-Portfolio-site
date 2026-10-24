@@ -8,7 +8,7 @@ export const profile = {
   location: "Bayugan City, Agusan del Sur, Philippines",
   dateRange: "Jun 15 – Aug 14, 2026",
   program: "BS Computer Science",
-  portraitUrl: "/ProfilePicture.png",
+  portraitUrl: "/profile.jpg",
 
   certificateUrl: "/certificate.jpg",
 

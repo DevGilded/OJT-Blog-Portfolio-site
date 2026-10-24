@@ -1,4 +1,4 @@
-// Gallery.tsx
+// src/pages/gallery.tsx
 import React, { useCallback, useState } from "react";
 import { SectionHeader } from "../components/SectionHeader";
 import { Tabs } from "../components/Tabs";
@@ -8,23 +8,35 @@ import { galleryCategories, galleryPhotos } from "../data/gallery";
 import { weeklyLogs } from "../data/weeklyLogs";
 
 // Extract documentation photos from the weekly logs
-const docPhotos = weeklyLogs.flatMap((log) => log.photos || []);
-
-// Combine explicit gallery photos with the weekly log documentation photos
-const allPhotos = [...galleryPhotos, ...docPhotos];
-
-// Dynamically generate categories to ensure any new categories from docPhotos are included
-const combinedCategories = Array.from(
-  new Set([
-    ...galleryCategories,
-    ...docPhotos.map((p) => p.category).filter((c): c is string => Boolean(c)),
-  ]),
+const docPhotos = weeklyLogs.flatMap((log) =>
+  (log.photos || [])
+    .filter((photo) => photo.src !== "") // Remove empty placeholder images
+    .map((photo) => ({
+      ...photo,
+      // Create globally unique IDs to fix React key rendering bugs when filtering
+      id: `${log.slug}-${photo.id}`,
+    })),
 );
 
-// Ensure 'All' is the first category option
-const categories = combinedCategories.includes("All")
-  ? combinedCategories
-  : ["All", ...combinedCategories];
+// Combine explicit gallery photos with the weekly log documentation photos
+// and sort them chronologically by date (newest first)
+const allPhotos = [...galleryPhotos, ...docPhotos].sort((a, b) => {
+  const dateA = a.date ? new Date(a.date).getTime() : 0;
+  const dateB = b.date ? new Date(b.date).getTime() : 0;
+  return dateB - dateA;
+});
+
+// Extract any new categories found in the logs that aren't in your predefined list
+const dynamicCategories = Array.from(
+  new Set(
+    docPhotos.map((p) => p.category).filter((c): c is string => Boolean(c)),
+  ),
+)
+  .filter((c) => !galleryCategories.includes(c))
+  .sort(); // Sort dynamic ones alphabetically
+
+// Combine your predefined categories (which already includes 'All') with the new sorted dynamic ones
+const categories = [...galleryCategories, ...dynamicCategories];
 
 export function Gallery() {
   const [category, setCategory] = useState("All");
@@ -34,6 +46,7 @@ export function Gallery() {
     category === "All"
       ? allPhotos
       : allPhotos.filter((p) => p.category === category);
+
   const handleClose = useCallback(() => setActiveIndex(null), []);
 
   return (

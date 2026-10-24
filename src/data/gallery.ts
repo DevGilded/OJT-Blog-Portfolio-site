@@ -7,7 +7,16 @@ export const galleryCategories = [
   "Presentation",
   // "Team",
   // "Design",
-  // "Milestones",
+  "Milestones",
 ];
 
-export const galleryPhotos: Photo[] = [];
+export const galleryPhotos: Photo[] = [
+  {
+    id: "certificate",
+    src: "/certificate.jpg",
+    alt: "Certificate of Completion",
+    caption: "Certificate of Completion — 333h 58m rendered",
+    date: "Aug 14, 2026",
+    category: "Milestones",
+  },
+];

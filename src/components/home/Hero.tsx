@@ -76,7 +76,7 @@ export function Hero() {
         >
           <div className="absolute -top-[140px] left-[36px]">
             <img
-              src={profile.portraitUrl}
+              src="/hero.png"
               alt={`Portrait of ${profile.name}`}
               className="h-full w-full object-cover"
             />
