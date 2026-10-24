@@ -81,7 +81,7 @@ export function Hero() {
               className="h-full w-full object-cover"
             />
           </div>
-          <div className="absolute -bottom-14 left-14 right-4 flex items-center gap-4 rounded-[20px] border border-accent-gold-light bg-surface p-4 shadow-md sm:left-auto sm:right-[-1.5rem] sm:w-72 mr-10 xs:mr-18 sm:mr-20">
+          <div className="absolute -bottom-14 left-14 right-4 flex items-center gap-4 rounded-[20px] border border-accent-gold-light bg-surface p-4 shadow-md sm:left-auto sm:right-[-1.5rem] sm:w-72 mr-10 xs:mr-18 sm:mr-24">
             <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-accent-gold-tint text-accent-gold-dark">
               <AwardIcon className="h-5 w-5" aria-hidden="true" />
             </span>

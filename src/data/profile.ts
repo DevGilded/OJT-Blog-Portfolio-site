@@ -12,10 +12,9 @@ export const profile = {
 
   certificateUrl: "/certificate.jpg",
 
-  email: "mj.namok@email.com",
-  phone: "+63 917 555 0142",
-  github: "https://github.com/mjnamok",
-  linkedin: "https://linkedin.com/in/mjnamok",
+  email: "mj.lopez.namok@gmail.com",
+  phone: "+63 948 844 3462",
+  github: "https://github.com/DevGilded",
   intro:
     "I'm Mj, a Computer Science student who spent the summer of 2026 as a web developer intern at the NEMSU ICT Unit. This is my week-by-week log of those nine weeks — the Laravel bugs, the Vue.js forms, the Figma revisions, and everything I learned along the way.",
   dedication: "Dedicated to my mother and to NEMSU",

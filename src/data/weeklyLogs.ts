@@ -1,6 +1,7 @@
 import type { WeeklyLog } from "../types/content";
 
 export const weeklyLogs: WeeklyLog[] = [
+  // Week 1
   {
     week: 1,
     slug: "week-1-orientation-and-setup",
@@ -22,7 +23,7 @@ export const weeklyLogs: WeeklyLog[] = [
     body: [
       "The first week was all about getting integrated into the ICT department. We had our orientation with Ma'am Cara and Sir Tuga, who laid out the expectations and requirements for our OJT hours.",
       "I spent a significant portion of the week setting up my local development environment. Because I use Arch Linux, getting the exact stack configured with Docker and ensuring compatibility for Laravel, Vue 3, and Inertia.js took some tinkering.",
-      "We were officially introduced to the iAudit system—an internal control questionnaire and auditing management tool. My teammates (Seth, Joemar, and Aljon) and I divided the initial research and discussed how to structure the database.",
+      "We were officially introduced to the iAudit system—an internal control questionnaire and auditing management tool. My teammates (Joemar, and Aljon) and I divided the initial research and discussed how to structure the database.",
     ],
     tasks: [
       "Completed ICT department onboarding and OJT orientation",
@@ -78,8 +79,55 @@ export const weeklyLogs: WeeklyLog[] = [
         date: "Jun 16, 2026",
         category: "Client",
       },
+      {
+        id: "tuesday4",
+        src: "/week-1/tuesday4.jpg",
+        alt: "The laptop of my teammates showing the excel sheet timeline the supervisor created for us to follow",
+        caption:
+          "Day two — When the meeting was done the supervisor then create a timeline to follow for the system development",
+        date: "Jun 16, 2026",
+        category: "Client",
+      },
+      {
+        id: "wednesday1",
+        src: "/week-1/wednesday1.jpg",
+        alt: "Me with my laptop displaying the ERD i work for the system",
+        caption:
+          "Day three — We Start with ERD to follow and be structured in creating the system [Part 1]",
+        date: "Jun 17, 2026",
+        category: "Workplace",
+      },
+      {
+        id: "wednesday2",
+        src: "/week-1/wednesday2.jpg",
+        alt: "Me on the left with my teammate laptop showing the ERD",
+        caption:
+          "Day three — We Start with ERD to follow and be structured in creating the system [Part 2]",
+        date: "Jun 17, 2026",
+        category: "Workplace",
+      },
+      {
+        id: "thursday1",
+        src: "/week-1/thursday1.jpg",
+        alt: "Two of us intern presenting the ERD we build yesterday",
+        caption:
+          "Day four — Today we present the ERD we created yesterday [Part 1]",
+        date: "Jun 18, 2026",
+        category: "Presentation",
+      },
+      {
+        id: "thursday2",
+        src: "/week-1/thursday2.jpg",
+        alt: "Me Preparing the ERD to present",
+        caption:
+          "Day four — Today we present the ERD we created yesterday [Part 2]",
+        date: "Jun 18, 2026",
+        category: "Workplace",
+      },
     ],
   },
+
+  // Week 2
   {
     week: 2,
     slug: "week-2-initial-prototyping-and-middleware",
@@ -153,7 +201,7 @@ export const weeklyLogs: WeeklyLog[] = [
       "Internal Audit Demo",
     ],
     tags: ["Vue 3", "Frontend", "UI/UX", "AI Tools"],
-    milestone: "Presented the initial build to the Internal Audit department.",
+    // milestone: "Presented the initial build to the Internal Audit department.",
     thumbnailUrl: "/thumbnails/week-4.jpg",
     thumbnailAlt: "A modern web navigation app bar with dynamic breadcrumbs",
     body: [

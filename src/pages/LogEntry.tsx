@@ -1,5 +1,5 @@
 // LogEntry.tsx
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import {
   ArrowLeftIcon,
@@ -13,13 +13,16 @@ import { Button } from "../components/Button";
 import { QuoteBlock } from "../components/QuoteBlock";
 import { Tag, TagGroup } from "../components/Tag";
 import { Divider } from "../components/Divider";
+import { PhotoGalleryGrid } from "../components/PhotoGalleryGrid";
+import { Lightbox } from "../components/Lightbox";
 import { weeklyLogs } from "../data/weeklyLogs";
 import { formatMinutes } from "../utils/time";
-import type { Photo } from "../types/weeklyLog"; // Adjust this import path to where your Photo type is
 
 export function LogEntry() {
   const { slug } = useParams();
   const navigate = useNavigate();
+  const [activePhotoIndex, setActivePhotoIndex] = useState<number | null>(null);
+
   const index = weeklyLogs.findIndex((log) => log.slug === slug);
   const log = weeklyLogs[index];
 
@@ -143,35 +146,18 @@ export function LogEntry() {
                     />
                   </div>
 
-                  {/* Photo Grid */}
-                  <div className="grid gap-6 sm:grid-cols-2">
-                    {photos.map((photo) => (
-                      <figure
-                        key={photo.id}
-                        className="group relative flex flex-col gap-3 rounded-2xl border border-border-subtle bg-surface-subtle p-3 shadow-sm"
-                      >
-                        <div className="relative aspect-video overflow-hidden rounded-xl bg-surface">
-                          <img
-                            src={photo.src}
-                            alt={photo.alt}
-                            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
-                          />
-                        </div>
-                        <figcaption className="flex flex-col gap-1 px-1">
-                          <span className="text-sm font-medium text-text-strong">
-                            {photo.caption || photo.alt}
-                          </span>
-                          {photo.category && (
-                            <div className="mt-1">
-                              <span className="inline-flex items-center rounded-full bg-surface-raised px-2 py-0.5 text-[10px] font-medium text-text-muted">
-                                {photo.category}
-                              </span>
-                            </div>
-                          )}
-                        </figcaption>
-                      </figure>
-                    ))}
-                  </div>
+                  {/* Photo Grid synced with Lightbox index */}
+                  <PhotoGalleryGrid
+                    photos={photos}
+                    columns={2}
+                    onPhotoClick={(photo) => {
+                      // Find the global index of this photo in the main log.photos array
+                      const globalIndex = log.photos!.findIndex(
+                        (p) => p.id === photo.id,
+                      );
+                      setActivePhotoIndex(globalIndex);
+                    }}
+                  />
                 </div>
               ))}
             </div>
@@ -252,6 +238,16 @@ export function LogEntry() {
           )}
         </nav>
       </div>
+
+      {/* Lightbox Component */}
+      {log.photos && (
+        <Lightbox
+          photos={log.photos}
+          index={activePhotoIndex}
+          onClose={() => setActivePhotoIndex(null)}
+          onChange={setActivePhotoIndex}
+        />
+      )}
     </article>
   );
 }
