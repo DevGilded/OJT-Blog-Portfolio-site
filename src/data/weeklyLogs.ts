@@ -7,7 +7,7 @@ export const weeklyLogs: WeeklyLog[] = [
     title: "Orientation, Environment Setup, and iAudit Introduction",
     dateRange: "Jul 13 – Jul 17, 2026",
     startDate: "2026-07-13",
-    minutes: 2400,
+    minutes: 2007,
     readTime: "4 min read",
     summary:
       "Began the OJT at the university ICT department. Focused on orientation, setting up the local development environment, and getting introduced to the iAudit project scope.",
@@ -18,8 +18,7 @@ export const weeklyLogs: WeeklyLog[] = [
     ],
     tags: ["Onboarding", "Laravel", "Vue 3", "Setup"],
     thumbnailUrl: "/thumbnails/week-1.jpg",
-    thumbnailAlt:
-      "Initial setup of a dual-monitor coding environment running Arch Linux",
+    thumbnailAlt: "First meeting from Internal Audit to understand system",
     body: [
       "The first week was all about getting integrated into the ICT department. We had our orientation with Ma'am Cara and Sir Tuga, who laid out the expectations and requirements for our OJT hours.",
       "I spent a significant portion of the week setting up my local development environment. Because I use Arch Linux, getting the exact stack configured with Docker and ensuring compatibility for Laravel, Vue 3, and Inertia.js took some tinkering.",
@@ -33,6 +32,53 @@ export const weeklyLogs: WeeklyLog[] = [
     ],
     reflection:
       "Setting up the environment properly from day one saves hours of headaches later. It’s exciting to finally start working on a real-world system for the university.",
+    photos: [
+      {
+        id: "monday1",
+        src: "/week-1/flag1.jpg",
+        alt: "First day flag ceremony [Part 1]",
+        caption:
+          "Day one — Start with a success attendance in flag ceremony [Part 1]",
+        date: "Jun 15, 2026",
+        category: "Event",
+      },
+      {
+        id: "monday2",
+        src: "/week-1/flag2.jpg",
+        alt: "First day flag ceremony [Part 2]",
+        caption:
+          "Day one — Start with a success attendance in flag ceremony [Part 2]",
+        date: "Jun 15, 2026",
+        category: "Event",
+      },
+      {
+        id: "tuesday1",
+        src: "/week-1/tuesday1.jpg",
+        alt: "Meeting with the client for the System [Part 1]",
+        caption:
+          "Day two — First meeting with the client internal audit to build a system to automate their workflow [Part 1]",
+        date: "Jun 16, 2026",
+        category: "Client",
+      },
+      {
+        id: "tuesday2",
+        src: "/week-1/tuesday2.jpg",
+        alt: "Meeting with the client for the System [Part 2]",
+        caption:
+          "Day two — First meeting with the client internal audit to build a system to automate their workflow [Part 2]",
+        date: "Jun 16, 2026",
+        category: "Client",
+      },
+      {
+        id: "tuesday3",
+        src: "/week-1/tuesday3.jpg",
+        alt: "Meeting with the client for the System [Part 3]",
+        caption:
+          "Day two — First meeting with the client internal audit to build a system to automate their workflow [Part 3]",
+        date: "Jun 16, 2026",
+        category: "Client",
+      },
+    ],
   },
   {
     week: 2,
@@ -40,7 +86,7 @@ export const weeklyLogs: WeeklyLog[] = [
     title: "Diving into Code: Prototyping and Role-Based Middleware",
     dateRange: "Jul 20 – Jul 24, 2026",
     startDate: "2026-07-20",
-    minutes: 2400,
+    minutes: 2417,
     readTime: "4 min read",
     summary:
       "Started writing the actual application code, focusing on the initial prototype, establishing role-based middleware, and separating the admin and user portals.",
@@ -69,7 +115,7 @@ export const weeklyLogs: WeeklyLog[] = [
     title: "Building Out Core Features and Form Foundations",
     dateRange: "Jul 27 – Jul 31, 2026",
     startDate: "2026-07-27",
-    minutes: 2400,
+    minutes: 2413,
     readTime: "5 min read",
     summary:
       "Expanded the application's core administrative features, designed the preliminary database schemas for the forms, and prepared for the first system demonstration.",
@@ -97,7 +143,7 @@ export const weeklyLogs: WeeklyLog[] = [
     title: "Dynamic UI, AI Assistance, and the First Internal Audit Demo",
     dateRange: "Aug 3 – Aug 7, 2026",
     startDate: "2026-08-03",
-    minutes: 2400,
+    minutes: 2461,
     readTime: "5 min read",
     summary:
       "Built dynamic frontend navigation and a carousel-style ICQ form UI. Used AI tools to meet a strict deadline for the first Internal Audit presentation, resulting in a thesis recommendation.",
@@ -130,7 +176,7 @@ export const weeklyLogs: WeeklyLog[] = [
     title: "Code Refactoring, Generalization, and Scope Creep",
     dateRange: "Aug 10 – Aug 14, 2026",
     startDate: "2026-08-10",
-    minutes: 1920,
+    minutes: 1968,
     readTime: "4 min read",
     summary:
       "Dedicated to cleaning up the frontend codebase, unifying the navigation bar, and transitioning to backend Laravel database configurations before falling sick.",
@@ -159,7 +205,7 @@ export const weeklyLogs: WeeklyLog[] = [
     title: "The Great Revamp: Reducing AI Reliance",
     dateRange: "Aug 17 – Aug 21, 2026",
     startDate: "2026-08-17",
-    minutes: 2400,
+    minutes: 2090,
     readTime: "5 min read",
     summary:
       "Executed a complete manual migration and architectural revamp of the system to reduce reliance on AI-generated code and improve personal comprehension.",
@@ -190,7 +236,7 @@ export const weeklyLogs: WeeklyLog[] = [
     title: "Laravel CRUD Battles and Managing Expectations",
     dateRange: "Aug 24 – Aug 29, 2026",
     startDate: "2026-08-24",
-    minutes: 1920,
+    minutes: 2015,
     readTime: "4 min read",
     summary:
       "Focused entirely on backend Laravel CRUD operations for the form module. Encountered major bugs leading to a presentation reschedule and a cancelled overtime shift.",
@@ -218,7 +264,7 @@ export const weeklyLogs: WeeklyLog[] = [
     title: "Cross-Campus Testing Prep and the Thesis Transition",
     dateRange: "Aug 31 – Sep 4, 2026",
     startDate: "2026-08-31",
-    minutes: 2400,
+    minutes: 2200,
     readTime: "6 min read",
     summary:
       "Finalized the Internal Audit form interfaces, successfully presented the system, solidified the transition to an academic thesis, and completed the unit head portal.",
@@ -249,7 +295,7 @@ export const weeklyLogs: WeeklyLog[] = [
     title: "UI Polish, Extra Hours, and the Finish Line",
     dateRange: "Sep 7 – Sep 11, 2026",
     startDate: "2026-09-07",
-    minutes: 2400,
+    minutes: 2467,
     readTime: "3 min read",
     summary:
       "Refined UI/UX designs as OJT hours concluded, volunteered extra time to ensure system stability, and attended the ICT-sponsored practicum completion party.",

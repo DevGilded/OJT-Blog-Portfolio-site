@@ -1,3 +1,4 @@
+// LogEntry.tsx
 import React from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import {
@@ -14,6 +15,7 @@ import { Tag, TagGroup } from "../components/Tag";
 import { Divider } from "../components/Divider";
 import { weeklyLogs } from "../data/weeklyLogs";
 import { formatMinutes } from "../utils/time";
+import type { Photo } from "../types/weeklyLog"; // Adjust this import path to where your Photo type is
 
 export function LogEntry() {
   const { slug } = useParams();
@@ -41,6 +43,18 @@ export function LogEntry() {
 
   const prev = weeklyLogs[index - 1];
   const next = weeklyLogs[index + 1];
+
+  // Group photos by date
+  const groupedPhotos =
+    log.photos?.reduce(
+      (acc, photo) => {
+        const dateKey = photo.date || "Undated";
+        if (!acc[dateKey]) acc[dateKey] = [];
+        acc[dateKey].push(photo);
+        return acc;
+      },
+      {} as Record<string, typeof log.photos>,
+    ) || {};
 
   return (
     <article className="pb-24">
@@ -101,8 +115,8 @@ export function LogEntry() {
 
         {/* Photo Documentation Section */}
         {log.photos && log.photos.length > 0 && (
-          <section aria-labelledby="photos-title" className="mt-12">
-            <div className="mb-6 flex items-center gap-2">
+          <section aria-labelledby="photos-title" className="mt-16">
+            <div className="mb-8 flex items-center gap-2">
               <ImageIcon
                 className="h-5 w-5 text-text-muted"
                 aria-hidden="true"
@@ -114,35 +128,51 @@ export function LogEntry() {
                 Photo Documentation
               </h2>
             </div>
-            <div className="grid gap-6 sm:grid-cols-2">
-              {log.photos.map((photo) => (
-                <figure
-                  key={photo.id}
-                  className="group relative flex flex-col gap-3 rounded-2xl border border-border-subtle bg-surface-subtle p-3 shadow-sm"
-                >
-                  <div className="relative aspect-video overflow-hidden rounded-xl bg-surface">
-                    <img
-                      src={photo.src}
-                      alt={photo.alt}
-                      className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+
+            <div className="space-y-10">
+              {Object.entries(groupedPhotos).map(([date, photos]) => (
+                <div key={date}>
+                  {/* Date Separator */}
+                  <div className="mb-5 flex items-center gap-4">
+                    <h3 className="whitespace-nowrap font-mono text-sm font-semibold tracking-wide text-text-muted">
+                      {date}
+                    </h3>
+                    <div
+                      className="h-px flex-1 bg-border-subtle"
+                      aria-hidden="true"
                     />
                   </div>
-                  <figcaption className="flex flex-col gap-1 px-1">
-                    <span className="text-sm font-medium text-text-strong">
-                      {photo.caption || photo.alt}
-                    </span>
-                    {(photo.date || photo.category) && (
-                      <div className="mt-1 flex items-center justify-between text-xs text-text-muted font-mono">
-                        {photo.date && <time>{photo.date}</time>}
-                        {photo.category && (
-                          <span className="inline-flex items-center rounded-full bg-surface-raised px-2 py-0.5 text-[10px] font-medium">
-                            {photo.category}
+
+                  {/* Photo Grid */}
+                  <div className="grid gap-6 sm:grid-cols-2">
+                    {photos.map((photo) => (
+                      <figure
+                        key={photo.id}
+                        className="group relative flex flex-col gap-3 rounded-2xl border border-border-subtle bg-surface-subtle p-3 shadow-sm"
+                      >
+                        <div className="relative aspect-video overflow-hidden rounded-xl bg-surface">
+                          <img
+                            src={photo.src}
+                            alt={photo.alt}
+                            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                          />
+                        </div>
+                        <figcaption className="flex flex-col gap-1 px-1">
+                          <span className="text-sm font-medium text-text-strong">
+                            {photo.caption || photo.alt}
                           </span>
-                        )}
-                      </div>
-                    )}
-                  </figcaption>
-                </figure>
+                          {photo.category && (
+                            <div className="mt-1">
+                              <span className="inline-flex items-center rounded-full bg-surface-raised px-2 py-0.5 text-[10px] font-medium text-text-muted">
+                                {photo.category}
+                              </span>
+                            </div>
+                          )}
+                        </figcaption>
+                      </figure>
+                    ))}
+                  </div>
+                </div>
               ))}
             </div>
           </section>
@@ -150,7 +180,7 @@ export function LogEntry() {
 
         <section
           aria-labelledby="tasks-title"
-          className="mt-12 rounded-[20px] border border-border bg-surface p-6 sm:p-8"
+          className="mt-16 rounded-[20px] border border-border bg-surface p-6 sm:p-8"
         >
           <h2 id="tasks-title" className="font-heading text-xl font-semibold">
             What I worked on

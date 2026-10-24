@@ -1,5 +1,6 @@
+// WeeklyLogs.tsx
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SearchXIcon, ImageIcon } from "lucide-react";
 import { SectionHeader } from "../components/SectionHeader";
 import { Tabs } from "../components/Tabs";
@@ -91,9 +92,13 @@ export function WeeklyLogs() {
       </div>
     );
 
-  // Extract all photos from filtered logs for the gallery view
+  // Extract all photos from filtered logs and include the slug for navigation
   const photos = filtered.flatMap((log) =>
-    (log.photos || []).map((photo) => ({ ...photo, week: log.week })),
+    (log.photos || []).map((photo) => ({
+      ...photo,
+      week: log.week,
+      slug: log.slug,
+    })),
   );
 
   const gallery =
@@ -105,9 +110,10 @@ export function WeeklyLogs() {
     ) : (
       <div className="grid gap-6 pt-8 sm:grid-cols-2 lg:grid-cols-2">
         {photos.map((photo) => (
-          <div
+          <Link
             key={photo.id}
-            className="group relative flex flex-col gap-3 rounded-2xl border border-border-subtle bg-surface-subtle p-3 shadow-sm transition-all hover:shadow-md"
+            to={`/logs/${photo.slug}`}
+            className="group relative flex flex-col gap-3 rounded-2xl border border-border-subtle bg-surface-subtle p-3 shadow-sm transition-all hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-primary"
           >
             <div className="relative aspect-video overflow-hidden rounded-xl bg-surface">
               <img
@@ -117,7 +123,7 @@ export function WeeklyLogs() {
               />
             </div>
             <div className="flex flex-col gap-1 px-1">
-              <p className="text-sm font-medium text-text-strong">
+              <p className="text-sm font-medium text-text-strong group-hover:text-primary-dark transition-colors">
                 {photo.caption || photo.alt}
               </p>
               <div className="flex items-center justify-between text-xs text-text-muted font-mono">
@@ -130,7 +136,7 @@ export function WeeklyLogs() {
                 </span>
               )}
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     );
