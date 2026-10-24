@@ -5,124 +5,135 @@ export const weeklyLogs: WeeklyLog[] = [
   {
     week: 1,
     slug: "week-1-orientation-and-setup",
-    title: "Orientation, Environment Setup, and iAudit Introduction",
-    dateRange: "Jul 13 – Jul 17, 2026",
-    startDate: "2026-07-13",
+    title: "Orientation, Environment Setup, and Requirements Gathering",
+    dateRange: "Jun 15 – Jun 19, 2026",
+    startDate: "2026-06-15",
     minutes: 2007,
     readTime: "4 min read",
     summary:
-      "Began the OJT at the university ICT department. Focused on orientation, setting up the local development environment, and getting introduced to the iAudit project scope.",
+      "Commenced the OJT by attending the institutional assembly and ICT orientation. Focused on technical onboarding, workstation setup, and requirements gathering with the Internal Audit office to lay the groundwork for the iAudit system.",
     highlights: [
-      "OJT Orientation",
-      "Dev Environment Setup",
-      "Project Briefing",
+      "ICT Orientation",
+      "Requirements Gathering",
+      "ERD & Flow Diagrams",
+      "Workstation Setup",
     ],
-    tags: ["Onboarding", "Laravel", "Vue 3", "Setup"],
-    thumbnailUrl: "/thumbnails/week-1.jpg",
-    thumbnailAlt: "First meeting from Internal Audit to understand system",
+    tags: ["Onboarding", "Laravel", "Vue 3", "System Design"],
+    thumbnailUrl: "/week-1/tuesday1.jpg",
+    thumbnailAlt:
+      "Initial requirements gathering meeting with the Internal Audit office",
     body: [
-      "The first week was all about getting integrated into the ICT department. We had our orientation with Ma'am Cara and Sir Tuga, who laid out the expectations and requirements for our OJT hours.",
-      "I spent a significant portion of the week setting up my local development environment. Because I use Arch Linux, getting the exact stack configured with Docker and ensuring compatibility for Laravel, Vue 3, and Inertia.js took some tinkering.",
-      "We were officially introduced to the iAudit system—an internal control questionnaire and auditing management tool. My teammates (Joemar, and Aljon) and I divided the initial research and discussed how to structure the database.",
+      "The practicum officially began on Monday with the weekly institutional assembly. Afterward, we focused on organizing our designated software team workstations and kicking off our technical onboarding. Since I use Arch Linux, configuring the local development environment—specifically getting Laravel and Vue.js running smoothly across our machines—took some dedicated effort.",
+      "Tuesday and Wednesday were heavily focused on understanding the client's needs. We had a formal orientation with the ICT Department Head and our supervisors (Ma'am Cara and Sir Tuga) before formalizing our development team. We then conducted our first requirements-gathering interview with the Internal Audit office. After analyzing their Baseline Assessment Result (BAR) and Internal Control Questionnaire (ICQ) templates, I started drafting the system's Entity-Relationship Diagram (ERD).",
+      "By Thursday, I finalized the ERD and presented it alongside our Level 0 and Level 2 flow diagrams to our supervisor. We received great actionable feedback to iterate on before the long weekend, as Friday was an observed regional holiday.",
     ],
     tasks: [
-      "Completed ICT department onboarding and OJT orientation",
-      "Configured local Linux development environment for Laravel and Vue 3",
-      "Reviewed the project scope and requirements for the iAudit system",
-      "Held initial planning meetings with teammates Seth, Joemar, and Aljon",
+      "Prepared software team workstations and completed technical onboarding for Laravel and Vue.js",
+      "Attended the institutional assembly and formal ICT Department orientation",
+      "Conducted requirements gathering and analyzed BAR/ICQ documentation with Internal Audit",
+      "Designed and presented the system's ERD and Level 0/2 flow diagrams for preliminary review",
     ],
     reflection:
-      "Setting up the environment properly from day one saves hours of headaches later. It’s exciting to finally start working on a real-world system for the university.",
+      "Understanding the exact requirements and modeling the database (ERD) before writing a single line of code provides a clear roadmap. The initial planning phases are just as important as the development itself.",
     photos: [
       {
         id: "monday1",
         src: "/week-1/flag1.jpg",
-        alt: "First day flag ceremony [Part 1]",
+        alt: "NEMSU Main Campus students and interns attending the Monday morning flag ceremony",
         caption:
-          "Day one — Start with a success attendance in flag ceremony [Part 1]",
+          "Day 1 — Officially starting the practicum by attending the weekly institutional assembly and flag ceremony.",
         date: "Jun 15, 2026",
         category: "Event",
       },
       {
         id: "monday2",
         src: "/week-1/flag2.jpg",
-        alt: "First day flag ceremony [Part 2]",
+        alt: "Interns lined up during the institutional assembly at NEMSU",
         caption:
-          "Day one — Start with a success attendance in flag ceremony [Part 2]",
+          "Day 1 — Gathering with fellow students and interns before heading to the ICT department to prepare our workstations.",
         date: "Jun 15, 2026",
         category: "Event",
       },
       {
         id: "tuesday1",
         src: "/week-1/tuesday1.jpg",
-        alt: "Meeting with the client for the System [Part 1]",
+        alt: "Interns meeting with the Internal Audit staff in their office",
         caption:
-          "Day two — First meeting with the client internal audit to build a system to automate their workflow [Part 1]",
+          "Day 2 — Conducting our first requirements-gathering interview with the Internal Audit office to define system functionalities.",
         date: "Jun 16, 2026",
-        category: "Client",
+        category: "Meeting",
       },
       {
         id: "tuesday2",
         src: "/week-1/tuesday2.jpg",
-        alt: "Meeting with the client for the System [Part 2]",
+        alt: "Discussion between the software development team and the Internal Audit staff",
         caption:
-          "Day two — First meeting with the client internal audit to build a system to automate their workflow [Part 2]",
+          "Day 2 — Listening to the client explain their current workflow to understand how we can best automate the auditing process.",
         date: "Jun 16, 2026",
-        category: "Client",
+        category: "Meeting",
       },
       {
         id: "tuesday3",
         src: "/week-1/tuesday3.jpg",
-        alt: "Meeting with the client for the System [Part 3]",
+        alt: "Interns taking notes during the system requirements briefing",
         caption:
-          "Day two — First meeting with the client internal audit to build a system to automate their workflow [Part 3]",
+          "Day 2 — Taking detailed notes on the project scope and client expectations.",
         date: "Jun 16, 2026",
-        category: "Client",
+        category: "Meeting",
       },
       {
         id: "tuesday4",
         src: "/week-1/tuesday4.jpg",
-        alt: "The laptop of my teammates showing the excel sheet timeline the supervisor created for us to follow",
+        alt: "Laptop screen displaying a Google Sheets timeline for the ICQ Tracking System",
         caption:
-          "Day two — When the meeting was done the supervisor then create a timeline to follow for the system development",
+          "Day 2 — Reviewing the project timeline and development milestones established by our immediate supervisor.",
         date: "Jun 16, 2026",
-        category: "Client",
+        category: "Planning",
       },
       {
         id: "wednesday1",
         src: "/week-1/wednesday1.jpg",
-        alt: "Me with my laptop displaying the ERD i work for the system",
+        alt: "Intern working on a laptop displaying database relationship diagrams",
         caption:
-          "Day three — We Start with ERD to follow and be structured in creating the system [Part 1]",
+          "Day 3 — Drafting the initial Entity-Relationship Diagram (ERD) based on the Baseline Assessment Result (BAR) and ICQ templates.",
         date: "Jun 17, 2026",
-        category: "Workplace",
+        category: "Development",
       },
       {
         id: "wednesday2",
         src: "/week-1/wednesday2.jpg",
-        alt: "Me on the left with my teammate laptop showing the ERD",
+        alt: "Software development interns collaborating on the system's database schema",
         caption:
-          "Day three — We Start with ERD to follow and be structured in creating the system [Part 2]",
+          "Day 3 — Collaborating with the team to properly structure the database and integrate the Laravel backend with Vue.js.",
         date: "Jun 17, 2026",
-        category: "Workplace",
+        category: "Development",
       },
       {
         id: "thursday1",
         src: "/week-1/thursday1.jpg",
-        alt: "Two of us intern presenting the ERD we build yesterday",
+        alt: "Intern presenting the completed ERD to the immediate supervisor",
         caption:
-          "Day four — Today we present the ERD we created yesterday [Part 1]",
+          "Day 4 — Presenting the finalized ERD and Level 0/2 flow diagrams to the supervisor for preliminary review and feedback.",
         date: "Jun 18, 2026",
         category: "Presentation",
       },
       {
         id: "thursday2",
         src: "/week-1/thursday2.jpg",
-        alt: "Me Preparing the ERD to present",
+        alt: "Intern finalizing system flow diagrams on a laptop before the presentation",
         caption:
-          "Day four — Today we present the ERD we created yesterday [Part 2]",
+          "Day 4 — Making final adjustments to the system process flows based on actionable feedback from the supervisors.",
         date: "Jun 18, 2026",
-        category: "Workplace",
+        category: "Development",
+      },
+      {
+        id: "friday1",
+        src: "/week-1/friday1.jpg",
+        alt: "Placeholder representing the regional holiday",
+        caption:
+          "Day 5 — Official regional holiday. No practicum hours were rendered to close out the first week.",
+        date: "Jun 19, 2026",
+        category: "Holiday",
       },
     ],
   },
@@ -131,60 +142,294 @@ export const weeklyLogs: WeeklyLog[] = [
   {
     week: 2,
     slug: "week-2-initial-prototyping-and-middleware",
-    title: "Diving into Code: Prototyping and Role-Based Middleware",
-    dateRange: "Jul 20 – Jul 24, 2026",
-    startDate: "2026-07-20",
+    title: "Git Initialization, UI/UX Wireframing, and ICQ Prototyping",
+    dateRange: "Jun 22 – Jun 26, 2026",
+    startDate: "2026-06-22",
     minutes: 2417,
     readTime: "4 min read",
     summary:
-      "Started writing the actual application code, focusing on the initial prototype, establishing role-based middleware, and separating the admin and user portals.",
-    highlights: ["Prototyping", "Role-Based Middleware", "Portal Separation"],
-    tags: ["Development", "Inertia.js", "Middleware", "Authentication"],
-    thumbnailUrl: "/thumbnails/week-2.jpg",
-    thumbnailAlt:
-      "Code snippet demonstrating role-based middleware routing in Laravel",
+      "Established the project's version control by initializing the Git repository and focused heavily on UI/UX development using Figma[cite: 3]. Completed the ICQ self-assessment module and initiated Administrator interface wireframing[cite: 3].",
+    highlights: [
+      "Git Initialization",
+      "Figma Wireframing",
+      "ICQ Module UI",
+      "Admin Interface",
+    ],
+    tags: ["UI/UX", "Figma", "Git", "Prototyping"],
+    thumbnailUrl: "/week-2/monday2.jpg",
+    thumbnailAlt: "Software development team collaborating on UI/UX wireframes",
     body: [
-      "This week, development officially began. We hit the ground running by generating the foundational Laravel routes and setting up Inertia.js to connect our backend with the Vue 3 frontend.",
-      "My primary task was establishing the role-based middleware. iAudit requires strict access control, so I had to ensure that internal auditors, unit heads, and standard users had completely separate portals and permissions.",
-      "We relied quite a bit on AI tools during this phase to quickly scaffold the boilerplate code and get a working prototype up and running. It felt fast, but I started noticing some structural complexities.",
+      "This week marked the beginning of our structured development phase. I established the project's version control by initializing the Git repository[cite: 3]. The team then heavily focused on UI/UX wireframe development, integrating our initial team design drafts from Magic Pattern and migrating them into the Figma desktop application to leverage its full interactive capabilities[cite: 3].",
+      "By mid-week, our primary objective was the Internal Control Questionnaire (ICQ) module. I completed the user interface design for the self-assessment module and refined the form with interactive elements[cite: 3]. Once the user-facing side was stabilized, we conducted a workflow review and prioritized drafting the Administrator interfaces to accelerate overall development progress[cite: 3].",
+      "We wrapped up the week by finalizing the user-facing UI designs for both the ICQ and Baseline Assessment Result (BAR) modules[cite: 3]. I also prepared our bi-weekly practicum progress reports for advisor approval and initiated the Administrator interface wireframing (dashboard and form creator) while strategically scheduling a supervisor review for the following week to ensure full team alignment[cite: 3].",
     ],
     tasks: [
-      "Scaffolded the base Laravel and Vue 3/Inertia application",
-      "Implemented role-based middleware for access control",
-      "Created distinct routing for the Admin and User portals",
-      "Utilized AI tools for rapid code scaffolding and prototyping",
+      "Initialized the project's Git repository for version control[cite: 3]",
+      "Migrated and refined UI/UX wireframes using the Figma desktop application and Magic Pattern[cite: 3]",
+      "Completed user interface designs for the ICQ and BAR self-assessment modules[cite: 3]",
+      "Initiated wireframing for the Administrator dashboard and form creator interfaces[cite: 3]",
     ],
     reflection:
-      "Using AI to generate boilerplate is incredibly fast, but I need to make sure I actually understand the underlying architecture it creates.",
+      "Transitioning from rough drafts to interactive Figma prototypes early on ensures the whole team shares a unified vision before writing the complex backend logic.",
+    photos: [
+      {
+        id: "monday1",
+        src: "/week-2/monday1.jpg",
+        alt: "NEMSU Main Campus flag ceremony for the second week of practicum",
+        caption:
+          "Day 6 — Starting the second week by attending the Monday morning flag ceremony.",
+        date: "Jun 22, 2026",
+        category: "Event",
+      },
+      {
+        id: "monday2",
+        src: "/week-2/monday2.jpg",
+        alt: "Interns setting up their Git repository and opening Figma on their laptops",
+        caption:
+          "Day 6 — Initializing our Git repository and starting UI/UX wireframing using Figma and Magic Pattern[cite: 3].",
+        date: "Jun 22, 2026",
+        category: "Development",
+      },
+      {
+        id: "monday3",
+        src: "/week-2/monday3.jpg",
+        alt: "Close up of an intern designing system layouts on a laptop",
+        caption:
+          "Day 6 — Translating initial concepts and Magic Pattern drafts into digital wireframes[cite: 3].",
+        date: "Jun 22, 2026",
+        category: "Development",
+      },
+      {
+        id: "monday4",
+        src: "/week-2/monday4.jpg",
+        alt: "The software development team collaborating on UI/UX interfaces at their workstation",
+        caption:
+          "Day 6 — Discussing the layout and user flow for the primary system components.",
+        date: "Jun 22, 2026",
+        category: "Collaboration",
+      },
+      {
+        id: "tuesday1",
+        src: "/week-2/tuesday1.jpg",
+        alt: "Interns migrating design assets to the Figma desktop application",
+        caption:
+          "Day 7 — Migrating our project assets to the Figma desktop app to utilize its cost-free interactive design capabilities[cite: 3].",
+        date: "Jun 23, 2026",
+        category: "Development",
+      },
+      {
+        id: "tuesday2",
+        src: "/week-2/tuesday2.jpg",
+        alt: "Team members reviewing Figma wireframes on multiple laptop screens",
+        caption:
+          "Day 7 — Reviewing interactive elements and refining the user experience workflow[cite: 3].",
+        date: "Jun 23, 2026",
+        category: "Development",
+      },
+      {
+        id: "wednesday1",
+        src: "/week-2/wednesday1.jpg",
+        alt: "Intern focused on designing the ICQ self-assessment module in Figma",
+        caption:
+          "Day 8 — Focusing strictly on the user interface for the Internal Control Questionnaire (ICQ) self-assessment module[cite: 3].",
+        date: "Jun 24, 2026",
+        category: "Development",
+      },
+      {
+        id: "wednesday2",
+        src: "/week-2/wednesday2.jpg",
+        alt: "Software team working quietly at their designated workstations on frontend designs",
+        caption:
+          "Day 8 — Deep work session to complete the ICQ self-assessment UI components[cite: 3].",
+        date: "Jun 24, 2026",
+        category: "Workplace",
+      },
+      {
+        id: "wednesday3",
+        src: "/week-2/wednesday3.jpg",
+        alt: "Interns discussing the layout of the UI elements",
+        caption:
+          "Day 8 — Aligning the frontend Figma wireframes with our previously established ERD.",
+        date: "Jun 24, 2026",
+        category: "Collaboration",
+      },
+      {
+        id: "thursday1",
+        src: "/week-2/thursday1.jpg",
+        alt: "Team refining the interactive design elements of the ICQ forms",
+        caption:
+          "Day 9 — Refining the ICQ form and adding interactive design elements to simulate user flow[cite: 3].",
+        date: "Jun 25, 2026",
+        category: "Development",
+      },
+      {
+        id: "thursday2",
+        src: "/week-2/thursday2.jpg",
+        alt: "Intern drafting the Administrator dashboard wireframes on a laptop",
+        caption:
+          "Day 9 — Shifting priority to draft the Administrator dashboard and form creator interfaces to accelerate progress[cite: 3].",
+        date: "Jun 25, 2026",
+        category: "Development",
+      },
+      {
+        id: "thursday3",
+        src: "/week-2/thursday3.jpg",
+        alt: "Team continuing Administrator interface development",
+        caption:
+          "Day 9 — Finalizing the Administrator workflow designs and conducting a workflow review[cite: 3].",
+        date: "Jun 25, 2026",
+        category: "Development",
+      },
+      {
+        id: "friday1",
+        src: "",
+        alt: "Placeholder for Friday documentation",
+        caption:
+          "Day 10 — Prepared bi-weekly practicum progress reports and scheduled supervisor reviews[cite: 3]. (No photos taken)",
+        date: "Jun 26, 2026",
+        category: "Documentation",
+      },
+    ],
   },
+
+  // Week 3
   {
     week: 3,
     slug: "week-3-core-features-and-form-foundations",
-    title: "Building Out Core Features and Form Foundations",
-    dateRange: "Jul 27 – Jul 31, 2026",
-    startDate: "2026-07-27",
+    title: "Environment Initialization, Git Workflow, and iLab Support",
+    dateRange: "Jun 29 – Jul 03, 2026",
+    startDate: "2026-06-29",
     minutes: 2413,
     readTime: "5 min read",
     summary:
-      "Expanded the application's core administrative features, designed the preliminary database schemas for the forms, and prepared for the first system demonstration.",
-    highlights: ["Core Features", "Database Schema", "Demo Preparation"],
-    tags: ["Backend", "Database", "CRUD", "UI/UX"],
-    thumbnailUrl: "/thumbnails/week-3.jpg",
-    thumbnailAlt: "A wireframe of the internal control questionnaire layout",
+      "Finalized the local Arch Linux development environments and successfully initialized the foundational Laravel and Vue.js application on a local server[cite: 4]. Established strict Git version control workflows and advanced backend programming with a focus on system middleware and authentication[cite: 4].",
+    highlights: [
+      "Arch Linux Setup",
+      "Git Workflow Integration",
+      "Backend Authentication",
+      "iLab Technical Support",
+    ],
+    tags: ["Laravel", "Arch Linux", "Git", "Backend"],
+    thumbnailUrl: "/week-3/monday2.jpg",
+    thumbnailAlt:
+      "Intern presenting the deferred weekly progress report to department staff",
     body: [
-      "Week 3 was heavily focused on the core administrative and user-side features. We needed to show tangible progress, so I started building out the basic UI elements for the organization and campus management modules.",
-      "The hardest part was visualizing how the multi-stage ICQ forms would actually map to the database. I drafted the preliminary schemas for how questions, categories, and answers would be stored.",
-      "By Friday, we were rushing to stitch the frontend UI components together with our backend logic to prepare for our first major demonstration with the Internal Audit department scheduled for the following week.",
+      "The week began with optimizing our local Arch Linux development environments following an OS migration, alongside advancing our administrative UI/UX wireframes[cite: 4]. I presented our deferred weekly progress report to the department staff to gather critical feedback, which guided our official transition into the development phase[cite: 4]. By Tuesday, we successfully initialized and deployed the foundational Laravel and Vue.js application on a local server[cite: 4].",
+      "Mid-week, I focused on establishing the team's Git version control workflow, defining strict branching conventions and implementing a mandatory pull request and code review process for repository management[cite: 4]. I also initiated backend development, specifically focusing on Laravel authentication, while adjusting the project workload to maintain momentum despite some team staffing shortages[cite: 4].",
+      "On Friday, we took a slight detour from the main project to provide logistical and technical support during the institutional Student Information System (SIS) program coordinators' meeting at the iLab, which involved configuring Mac workstations[cite: 4]. We wrapped up the week by advancing backend programming for system middleware integration and decided to defer our scheduled weekly presentation to target a fully functional local build for the following week[cite: 4].",
     ],
     tasks: [
-      "Developed initial administrative UI components",
-      "Drafted preliminary database schemas for the ICQ forms",
-      "Integrated frontend form components with backend controllers",
-      "Prepared the staging environment for the upcoming stakeholder demo",
+      "Configured local Arch Linux development environments and deployed the foundational Laravel/Vue.js application[cite: 4].",
+      "Established a strict Git workflow with branching conventions and mandatory pull requests[cite: 4].",
+      "Initiated backend development focusing on Laravel authentication and system middleware integration[cite: 4].",
+      "Provided technical and logistical support by configuring Mac workstations at the iLab for the SIS coordinators' meeting[cite: 4].",
     ],
     reflection:
-      "Building features quickly is good, but doing it under a time crunch is starting to reveal cracks in the AI-generated code structure. A refactor might be necessary soon.",
+      "Establishing strict version control rules like mandatory pull requests early on prevents a lot of merge conflicts later. It forces the team to review each other's code and maintain a clean repository.",
+    photos: [
+      {
+        id: "monday1",
+        src: "/week-3/monday1.jpg",
+        alt: "Interns taking a group photo outside the building after the assembly",
+        caption:
+          "Day 11 — Attending the weekly institutional assembly before heading to the office[cite: 4].",
+        date: "Jun 29, 2026",
+        category: "Event",
+      },
+      {
+        id: "monday2",
+        src: "/week-3/monday2.jpg",
+        alt: "Intern presenting the iAudit system progress on a large screen",
+        caption:
+          "Day 11 — Presenting the deferred weekly progress report to department staff to gather critical feedback[cite: 4].",
+        date: "Jun 29, 2026",
+        category: "Presentation",
+      },
+      {
+        id: "tuesday1",
+        src: "/week-3/tuesday1.jpg",
+        alt: "Software team working on their laptops at the workstation",
+        caption:
+          "Day 12 — Configuring the local Arch Linux development environments to ensure operational readiness[cite: 4].",
+        date: "Jun 30, 2026",
+        category: "Development",
+      },
+      {
+        id: "tuesday2",
+        src: "/week-3/tuesday2.jpg",
+        alt: "Intern taking a selfie with teammates in the ICT office",
+        caption:
+          "Day 12 — Supporting the team in deploying the foundational Laravel and Vue.js application on a local server[cite: 4].",
+        date: "Jun 30, 2026",
+        category: "Workplace",
+      },
+      {
+        id: "wednesday1",
+        src: "/week-3/wednesday1.jpg",
+        alt: "Team members smiling for a group selfie at their desks",
+        caption:
+          "Day 13 — Finalizing local development environment configurations and beginning backend development[cite: 4].",
+        date: "Jul 1, 2026",
+        category: "Workplace",
+      },
+      {
+        id: "wednesday2",
+        src: "/week-3/wednesday2.jpg",
+        alt: "Laptop screen showing a GitHub pull request for the iAudit repository",
+        caption:
+          "Day 13 — Establishing the team's Git version control workflow with mandatory pull requests and code reviews[cite: 4].",
+        date: "Jul 1, 2026",
+        category: "Development",
+      },
+      {
+        id: "thursday1",
+        src: "/week-3/thursday1.jpg",
+        alt: "Interns focused on coding at their shared desk",
+        caption:
+          "Day 14 — Adjusting the project workload and monitoring development progress despite team staffing shortages[cite: 4].",
+        date: "Jul 2, 2026",
+        category: "Development",
+      },
+      {
+        id: "thursday2",
+        src: "/week-3/thursday2.jpg",
+        alt: "Team collaborating and writing code together",
+        caption:
+          "Day 14 — Continuing essential configurations on the Linux development environments to maintain project continuity[cite: 4].",
+        date: "Jul 2, 2026",
+        category: "Development",
+      },
+      {
+        id: "friday1",
+        src: "/week-3/friday1.jpg",
+        alt: "iLab room with Mac workstations prepared for the SIS meeting",
+        caption:
+          "Day 15 — Providing logistical and technical support at the iLab for the Student Information System (SIS) program coordinators' meeting[cite: 4].",
+        date: "Jul 3, 2026",
+        category: "Support",
+      },
+      {
+        id: "friday2",
+        src: "/week-3/friday2.jpg",
+        alt: "Interns debugging code on their laptops",
+        caption:
+          "Day 15 — Advancing backend programming with a focus on system middleware integration[cite: 4].",
+        date: "Jul 3, 2026",
+        category: "Development",
+      },
+      {
+        id: "friday3",
+        src: "/week-3/friday3.jpg",
+        alt: "Team members working closely to finish the weekly deliverables",
+        caption:
+          "Day 15 — Deferring the scheduled weekly presentation to target a fully functional local build for the subsequent week[cite: 4].",
+        date: "Jul 3, 2026",
+        category: "Development",
+      },
+    ],
   },
+
+  // Week 4
   {
     week: 4,
     slug: "week-4-frontend-ui-and-first-demo",

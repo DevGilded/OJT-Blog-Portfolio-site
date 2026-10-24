@@ -17,7 +17,7 @@ const topics = ["All", "Laravel", "Vue.js", "Figma", "Git", "Documentation"];
 export function WeeklyLogs() {
   const navigate = useNavigate();
   const [topic, setTopic] = useState("All");
-  const [view, setView] = useState("timeline");
+  const [view, setView] = useState("cards");
 
   const filtered =
     topic === "All"

@@ -4,7 +4,6 @@ export const galleryCategories = [
   "All",
   "Workplace",
   "Event",
-  "Client",
   "Presentation",
   // "Team",
   // "Design",
